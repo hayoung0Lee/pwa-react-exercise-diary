@@ -2,10 +2,11 @@
   "name": "pwa-react-exercise-diary",
   "version": "1.0.0",
   "description": "my exercise diary",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel src/index.html"
+    "start": "parcel index.html",
+    "postbuild": "workbox generateSW"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,31 @@
   "bugs": {
     "url": "https://github.com/hayoung0Lee/pwa-react-exercise-diary/issues"
   },
+  "pwaManifest": {
+    "name": "My Awesome PWA",
+    "shortName": "My PWA",
+    "startURL": ".",
+    "theme": "#add8e6",
+    "display": "standalone",
+    "generateIconOptions": {
+      "baseIcon": "./images/icon.png",
+      "sizes": [
+        192,
+        512
+      ],
+      "genFavicons": true
+    }
+  },
+  "workbox": {
+    "importScripts": [
+      "./worker.js"
+    ],
+    "globDirectory": "./dist",
+    "globPatterns": "**/*.{css,html,gif,js,jpg,png,svg,webp}"
+  },
   "homepage": "https://github.com/hayoung0Lee/pwa-react-exercise-diary#readme",
   "dependencies": {
+    "parcel-plugin-pwa-manifest": "^3.0.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -32,6 +56,7 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
     "parcel-bundler": "^1.12.4",
-    "prettier": "^2.2.0"
+    "prettier": "^2.2.0",
+    "workbox-cli": "^5.1.4"
   }
 }
