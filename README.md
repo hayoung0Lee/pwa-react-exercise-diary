@@ -35,3 +35,9 @@ Parcel로 뭔가를 설정을 할려고했더니 어려운 점이 많았다. 앞
 https://stackoverflow.com/questions/58128145/add-to-homescreen-link-missing-in-chrome-devtools
 
 이걸 겨우 찾았다. 그냥 + 버튼 눌러라. 
+
+## 내 모바일에서 내 데탑 로컬호스트로 접근하기
+`ifconfig | grep "inet " | grep -v 127.0.0.1`
+
+워 된다. 나는 아이폰이라 safari에서 위의 명령에서 나온 주소로 접근해서 add to home screen 해서 다운로드 받았다.
+
