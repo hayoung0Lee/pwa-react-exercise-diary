@@ -41,3 +41,4 @@ https://stackoverflow.com/questions/58128145/add-to-homescreen-link-missing-in-c
 
 워 된다. 나는 아이폰이라 safari에서 위의 명령에서 나온 주소로 접근해서 add to home screen 해서 다운로드 받았다.
 
+[manifest 파일과 service worker파일](https://altenull.github.io/2018/03/09/%EC%9B%B9%EC%95%B1-%EB%A7%A4%EB%8B%88%ED%8E%98%EC%8A%A4%ED%8A%B8-%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9B%8C%EC%BB%A4-Web-App-Manifest-Service-Worker/)
