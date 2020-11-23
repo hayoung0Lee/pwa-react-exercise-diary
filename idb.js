@@ -1,5 +1,3 @@
-console.log("Hello2");
-
 window.indexedDB =
   window.indexedDB ||
   window.mozIndexedDB ||

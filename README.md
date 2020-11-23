@@ -59,3 +59,19 @@ https://stackoverflow.com/questions/58128145/add-to-homescreen-link-missing-in-c
 4. close the transaction
 
 (command + R로 새로고침)
+
+## 아주 심각한 화면설계하기
+나는 디자이너분들을 많이많이 존경한다. 
+- 엉망인 ui
+
+<img src="./images/ui2.png" width="400">
+
+<img src="./images/ui2.png" width="400">
+
+<img src="./images/ui2.png" width="400">
+
+## 화면 구현
+- react router dom: https://reactrouter.com/web/guides/quick-start
+
+## react indexed db
+https://www.npmjs.com/package/react-indexed-db
