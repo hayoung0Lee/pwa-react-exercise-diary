@@ -42,3 +42,20 @@ https://stackoverflow.com/questions/58128145/add-to-homescreen-link-missing-in-c
 워 된다. 나는 아이폰이라 safari에서 위의 명령에서 나온 주소로 접근해서 add to home screen 해서 다운로드 받았다.
 
 [manifest 파일과 service worker파일](https://altenull.github.io/2018/03/09/%EC%9B%B9%EC%95%B1-%EB%A7%A4%EB%8B%88%ED%8E%98%EC%8A%A4%ED%8A%B8-%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9B%8C%EC%BB%A4-Web-App-Manifest-Service-Worker/)
+
+## indexed db를 사용한 데이터 저장
+[공부자료](https://medium.com/@pks2974/indexeddb-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC%ED%95%98%EA%B8%B0-ca9be4add614)
+
+(http://127.0.0.1:1234/)
+
+[indexed db youtube tutorial](https://www.youtube.com/watch?v=g4U5WRzHitM&ab_channel=AllThingsJavaScript%2CLLC)
+
+[javascript tutorial](https://ko.javascript.info/indexeddb)
+
+### indexed db 사용스텝
+1. open a database
+2. (if it is a first time you open a database or new version of database)create an object store in the database
+3. on the success event, conduct your transactions
+4. close the transaction
+
+(command + R로 새로고침)
