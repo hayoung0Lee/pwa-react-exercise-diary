@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styled from "styled-components";
+import Home from "./Home";
+import Stat from "./Stat";
 
 const UlStyle = styled.ul`
   display: flex;
@@ -26,6 +28,7 @@ const MainWrapper = styled.main`
   background-color: yellow;
   margin: auto;
 `;
+
 function App() {
   const [tab, setTab] = useState("HOME");
 
@@ -63,14 +66,6 @@ function App() {
       </Router>
     </>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function Stat() {
-  return <h2>stat</h2>;
 }
 
 export default App;

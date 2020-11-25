@@ -9,8 +9,9 @@ if (!window.indexedDB) {
   console.error("something went wrong, there is no window.indexedDB");
 }
 
-// qID, questionText, correctAnswer, studentAnswer, result
-let request = window.indexedDB.open("QuizQuestDatabase", 1);
+// weekCount, date, didWorkout, workoutMemo, foodMemo
+
+let request = window.indexedDB.open("WorkoutDatabase", 1);
 let db;
 let tx; // transaction
 let store;
@@ -19,9 +20,9 @@ let index;
 // when opening a new database or when upgrading with new version
 request.onupgradeneeded = function (e) {
   let db = request.result;
-  let store = db.createObjectStore("QuestionsStore", { keyPath: "qID" });
-  // store = db.createObjectStore("QuestionsStore", {autoIncrement: true});
-  let index = store.createIndex("questionText", "questionText", {
+  // let store = db.createObjectStore("WorkoutStore", { keyPath: "qID" });
+  store = db.createObjectStore("WorkoutStore", { autoIncrement: true });
+  let index = store.createIndex("weekCount", "weekCount", {
     unique: false,
   });
 };
@@ -32,42 +33,57 @@ request.onerror = function (e) {
 
 request.onsuccess = function (e) {
   db = request.result; // db is already global;
-  tx = db.transaction(["QuestionsStore"], "readwrite");
-  store = tx.objectStore("QuestionsStore");
-  index = store.index("questionText");
+  tx = db.transaction(["WorkoutStore"], "readwrite");
+  store = tx.objectStore("WorkoutStore");
+  index = store.index("weekCount");
 
   db.onerror = function (e) {
     console.error("Error", e.target.erroCode);
   };
 
-  // store.put({
-  //   qID: 1,
-  //   questionText: "The sky is blue",
-  //   correctAnswer: true,
-  //   studentAnswer: true,
-  //   result: true,
-  // });
+  // for (let i = 0; i < 7; i++) {
+  //   store.put({
+  //     weekCount: 1,
+  //     monDate: i + 1,
+  //     didWorkout: false,
+  //     workoutMemo: "",
+  //     foodMemo: "",
+  //   });
+  // }
 
-  // store.put({
-  //   qID: 2,
-  //   questionText: "The sky is blue",
-  //   correctAnswer: true,
-  //   studentAnswer: true,
-  //   result: true,
-  // });
+  // for (let i = 0; i < 7; i++) {
+  //   store.put({
+  //     weekCount: 2,
+  //     monDate: i + 1,
+  //     didWorkout: false,
+  //     workoutMemo: "",
+  //     foodMemo: "",
+  //   });
+  // }
 
-  let q1 = store.get(1);
-  let qs = index.get("The sky is blue");
+  // for (let j = 1; j < 10; j++) {
+  //   for (let i = 0; i < 7; i++) {
+  //     store.put({
+  //       weekCount: j,
+  //       monDate: i + 1,
+  //       didWorkout: false,
+  //       workoutMemo: "",
+  //       foodMemo: "",
+  //     });
+  //   }
+  // }
+
+  // let q1 = store.get(1);
+  // let qs = index.get(1);
 
   // indexeddb is asynchronous
-  q1.onsuccess = function () {
-    console.log(q1.result);
-    console.log(q1.result.questionText);
-  };
+  // q1.onsuccess = function () {
+  //   console.log(q1.result);
+  // };
 
-  qs.onsuccess = function () {
-    console.log(qs.result);
-  };
+  // qs.onsuccess = function () {
+  //   console.log(q1.result);
+  // };
 
   tx.oncomplete = function () {
     db.close();
