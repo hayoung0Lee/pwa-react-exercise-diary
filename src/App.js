@@ -1,37 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import styled from "styled-components";
 
+const UlStyle = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+
+  li {
+    width: 120px;
+    list-style: none;
+    diplay: flex;
+    justify-content: center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+`;
+
+const MainWrapper = styled.main`
+  width: 80%;
+  background-color: yellow;
+  margin: auto;
+`;
 function App() {
+  const [tab, setTab] = useState("HOME");
+
   return (
     <>
       <Router>
         <div>
-          <header>Hayoung's exercise app</header>
           <nav>
-            <ul>
+            <UlStyle>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" onClick={() => setTab("HOME")}>
+                  Home
+                </Link>
               </li>
+              <li>{tab}</li>
               <li>
-                <Link to="/stat">통계보기</Link>
+                <Link to="/stat" onClick={() => setTab("STAT")}>
+                  통계보기
+                </Link>
               </li>
-              <li>
-                <Link to="/export">데이터 내보내기</Link>
-              </li>
-            </ul>
+            </UlStyle>
           </nav>
 
-          <Switch>
-            <Route path="/stat">
-              <Stat />
-            </Route>
-            <Route path="/export">
-              <Export />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
+          <MainWrapper>
+            <Switch>
+              <Route path="/stat">
+                <Stat />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </MainWrapper>
         </div>
       </Router>
     </>
@@ -44,10 +71,6 @@ function Home() {
 
 function Stat() {
   return <h2>stat</h2>;
-}
-
-function Export() {
-  return <h2>export</h2>;
 }
 
 export default App;

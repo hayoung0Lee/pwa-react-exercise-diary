@@ -40,21 +40,21 @@ request.onsuccess = function (e) {
     console.error("Error", e.target.erroCode);
   };
 
-  //   store.put({
-  //     qID: 1,
-  //     questionText: "The sky is blue",
-  //     correctAnswer: true,
-  //     studentAnswer: true,
-  //     result: true,
-  //   });
+  // store.put({
+  //   qID: 1,
+  //   questionText: "The sky is blue",
+  //   correctAnswer: true,
+  //   studentAnswer: true,
+  //   result: true,
+  // });
 
-  //   store.put({
-  //     qID: 2,
-  //     questionText: "The sky is blue",
-  //     correctAnswer: true,
-  //     studentAnswer: true,
-  //     result: true,
-  //   });
+  // store.put({
+  //   qID: 2,
+  //   questionText: "The sky is blue",
+  //   correctAnswer: true,
+  //   studentAnswer: true,
+  //   result: true,
+  // });
 
   let q1 = store.get(1);
   let qs = index.get("The sky is blue");
