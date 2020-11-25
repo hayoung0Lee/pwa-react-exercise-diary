@@ -66,9 +66,9 @@ https://stackoverflow.com/questions/58128145/add-to-homescreen-link-missing-in-c
 
 <img src="./images/ui2.png" width="400">
 
-<img src="./images/ui2.png" width="400">
+<img src="./images/ui3.png" width="400">
 
-<img src="./images/ui2.png" width="400">
+<img src="./images/ui4.png" width="400">
 
 ## 화면 구현
 - react router dom: https://reactrouter.com/web/guides/quick-start
